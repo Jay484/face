@@ -1,0 +1,64 @@
+
+				------  Face Recognition  ------
+						-Astha Nirmal 
+						-Dhananjay Jhinkwan
+
+
+	This report summarise my project and my progress.
+
+1. Task Description:
+	Facial recognition is a technique to recognise or distinguish two different persons on the basis of their face.
+Face of the person can be recongnised from digital image or a video frame from a video frame.In simple term facial recognition 
+program crop the face that has been detected and compare with the faces stored in database and tells how much similar the face
+is with the other faces present in database.
+	Human beings perform face recognition automatically everydat and practically with no effect. Although it sound very
+simple task for us, it has proven to be a complex task for a computer, as it has many variable that can impair the accuracy of
+the methods, for example: illumination variation, low resolution, occlusion etc.
+	There are different types of face recognition algorithms:
+* LBPH- Local Binary Patterns Histograms
+* Fisherfaces
+* Scale Invariant Feature Transform
+* Speed Up Robust Feature
+
+2.Task methodology:
+	Task is divided in 3 main parts. 1)Storing Faces 2)Training the recognizer 3)Face recognition
+
+	Storing Faces:
+		A dataset folder is created in which all the sample faces are stored. 100 photos are captured for each user.
+	Name of the images is labeled as 'user' followed by 'user id' followed by 'user name' followed by 'no of image'. ID and 
+	name is to distinguish image manually.
+
+	Training the recognizer:
+		Using the collection of photos and user id attached to them via image name, a data file is created. Data file is 
+	created in such a way, that data is grouped by user id for 100 images with same user id, and than the data is stored in 
+	trainer.yml file.
+
+	Face Recognition:
+		Face recognition is the final and desired part of the project.In this part users are labeled with thier name
+	when appears in front of camera.
+3. Language, libraries, methods:
+	We used Python, a HLL coputer language in order to program mini face recognizer.
+	
+	OpenCV, os, numpy, pandas libraries are used.
+		OpenCv library is used to access webcam, load cascadeclassifier, create recogniser, train recogniser.
+	  	OS is used to access,load,create directories.
+		Numpy is used for calcualtion while training the recogniser and storing data in matrix form.
+		pandas is used to read data.csv file in which user ID and user name is stored.
+
+ 	Methods/funcitons used:
+		cv2.videoCapture() : To access webcam
+		cv2.cacadeclassifier(): Load xml file(consist of data) that detects the object (face here).
+		detectMultiscale(): Return the faces in frame.
+		videocapture.read(): To read the frame via webcam.
+		cv2.cvtColor(): Change color scale of image (since, we gonna work on grayscale).
+		cv2.imWrite(): Save the frame that has been catured.
+		cv2.imshow(): Dispaly the frame.	
+		cv2.waitKey(): Wait for key press.
+		cv2.face.LBPHFaceRecognizer_create(): Create a LBPH recognizer.
+		recognizer.train() : Extract data from each image and group them.
+		recognizer.save(): Save the data which is extracted after processing the iamges.
+		recognizer.predict(): Compares the live faces with dataset, and return id, confidence.
+
+4. Summary:
+		Do it yourself
+	
